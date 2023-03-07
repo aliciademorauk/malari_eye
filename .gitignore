@@ -1,6 +1,6 @@
 /malaria_data
 .python-version
-/notebooks/Untitled.ipynb
+
 # VSCode
 .vscode/*
 !.vscode/settings.json
