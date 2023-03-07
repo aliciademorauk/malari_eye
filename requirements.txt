@@ -13,7 +13,7 @@ jupyter-highlight-selected-word
 jupyter-latex-envs
 jupyter-nbextensions-configurator
 jupyter-resource-usage
-jupyter-server
+jupyter-server<2.0.0
 jupyter-server-mathjax
 jupyter_client
 jupyter_core
