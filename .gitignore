@@ -1,4 +1,5 @@
 /malaria_data
+.python-version
 
 # VSCode
 .vscode/*
@@ -174,3 +175,8 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+.python-version
+Untitled.ipynb
+notebooks/mw_tue_1110
+roughwork
