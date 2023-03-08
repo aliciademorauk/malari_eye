@@ -32,7 +32,6 @@ notebook_shim
 numpy
 pandas
 pandas-gbq
-Pillow
 plotly
 scikit-image
 scikit-learn
@@ -40,3 +39,4 @@ scipy
 seaborn
 statsmodels
 streamlit
+tensorflow
