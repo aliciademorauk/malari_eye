@@ -1,6 +1,7 @@
 /malaria_data
 .python-version
 /notebooks/Untitled.ipynb
+
 # VSCode
 .vscode/*
 !.vscode/settings.json
@@ -144,7 +145,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+.envrc
+.env.sample
 .venv
 env/
 venv/
