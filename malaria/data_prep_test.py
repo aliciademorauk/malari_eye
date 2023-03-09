@@ -7,8 +7,9 @@ import os
 # importing bounding box (BB) JSON file and preparing the dataframe so that all the leukocytes
 # are removed, and the BBs are filtered to eliminate too large and not square enough
 
-print(os.getcwd())
-with open('../malaria_data/training.json') as f:
+dir=os.path.dirname(os.path.dirname(__file__))
+path = os.path.join(dir,'malaria_data','test.json')
+with open(path) as f:
     data = json.load(f)
 
 # create empty dictionary with column names as keys
@@ -59,6 +60,12 @@ square_enough
 square_enough_and_good_size = square_enough.query('box_area <= 25000')
 square_enough_and_good_size
 
+# removing labelled difficult
+
+square_enough_good_size_drop_difficult = square_enough_and_good_size.drop(
+    square_enough_and_good_size[square_enough_and_good_size['category'] == 'difficult'].index)
+square_enough_good_size_drop_difficult
+
 # # removing labelled leukocytes - NB Removed from code for now
 
 # square_enough_good_size_no_leukocytes = square_enough_and_good_size.drop(
@@ -83,7 +90,10 @@ def return_resized_cell_array(iter_df, n_cells=0):
         y1 = iter_df['min_c'][index]
         y2 = iter_df['max_c'][index]
     #        create f string from path column to open each large image in np.array using Pillow image package
-        image = np.array(Image.open(f'../malaria_data{iter_df["path"][index]}'))
+        # import pdb; pdb.set_trace()
+        root = os.path.join(dir,'malaria_data')
+        image_path = f'{root}{iter_df["path"][index]}'
+        image = np.array(Image.open(image_path))
     #        convert np.array into grayscale using Pillow image package
         grayscale_image = Image.fromarray(image).convert('L')
     #         convert grayscale image back into np.array
@@ -97,12 +107,12 @@ def return_resized_cell_array(iter_df, n_cells=0):
         spliced_cells_category.append(iter_df['category'][index])
 
     #        make numpy files
-    np.save('x_values.npy', np.array(spliced_cells))
-    np.save('y_values.npy', np.array(spliced_cells_category))
+    np.save('test_x_values.npy', np.array(spliced_cells))
+    np.save('test_y_values.npy', np.array(spliced_cells_category))
 
     return spliced_cells, spliced_cells_category
 
-# call the function on the relevant dataframe (for now square_enough_and_good_size)
+# call the function on the relevant dataframe (for now square_enough_good_size_drop_difficult)
 # for now we're limiting the number of cells called to 1000
 
-return_resized_cell_array(square_enough_and_good_size, n_cells=1000)
+return_resized_cell_array(square_enough_good_size_drop_difficult)
