@@ -46,4 +46,4 @@ tensorboard-plugin-wit==1.8.1
 tensorflow-datasets==4.6.0
 tensorflow-estimator==2.10.0
 tensorflow-macos==2.10.0
-tensorflow-metadata==1.10.0
+tensorflow-metadata==1.12.0
