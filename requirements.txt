@@ -41,7 +41,7 @@ statsmodels
 streamlit
 #tensorflow
 tensorboard==2.10.1
-tensorboard-data-server==0.6.1
+tensorboard-data-server==0.7.0
 tensorboard-plugin-wit==1.8.1
 tensorflow-datasets==4.6.0
 tensorflow-estimator==2.10.0
