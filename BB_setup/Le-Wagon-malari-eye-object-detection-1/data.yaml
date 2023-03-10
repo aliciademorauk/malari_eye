@@ -1,0 +1,18 @@
+names:
+- difficult
+- gametocyte
+- leukocyte
+- red blood cell
+- ring
+- schizont
+- trophozoite
+nc: 7
+roboflow:
+  license: CC BY 4.0
+  project: le-wagon-malari-eye-object-detection
+  url: https://universe.roboflow.com/project/le-wagon-malari-eye-object-detection/dataset/1
+  version: 1
+  workspace: project
+test: ../test/images
+train: Le-Wagon-malari-eye-object-detection-1/train/images
+val: Le-Wagon-malari-eye-object-detection-1/valid/images
