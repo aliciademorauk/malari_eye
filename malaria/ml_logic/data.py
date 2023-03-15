@@ -76,7 +76,7 @@ def extract_json(data_json):
     return square_ok_size_df
 
 
-def return_resized_cell_array(iter_df, im_col, n_cells) -> (np.ndarray, np.ndarray):
+def return_resized_cell_array(iter_df, im_col, n_cells):
 # enter the name of the dataframe and the number of cells if not whole dataframe
 # create two lists, which will become our X and ys
     spliced_cells = []
