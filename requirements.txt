@@ -40,7 +40,7 @@ seaborn
 statsmodels
 streamlit
 #tensorflow
-tensorboard==2.10.1
+tensorboard==2.13.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 tensorflow-datasets==4.6.0
